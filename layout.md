@@ -1,5 +1,5 @@
-title.tex
-authors.tex
+article_title.tex
+authors_list.tex
 abstract.tex
 introduction.tex
 materials_methods.tex
