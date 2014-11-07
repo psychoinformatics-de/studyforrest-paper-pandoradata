@@ -1,4 +1,5 @@
 title.tex
+authors.tex
 abstract.tex
 introduction.tex
 materials_methods.tex
