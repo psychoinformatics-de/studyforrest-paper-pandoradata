@@ -1,1 +1,14 @@
-untitled.tex
+title.tex
+authors.tex
+abstract.tex
+introduction.tex
+materials_methods.tex
+dataset_validation.tex
+tables.tex
+consent.tex
+contributions.tex
+competing_interests.tex
+grant_information.tex
+acknowledgments.tex
+references.tex
+figure_legends.tex
