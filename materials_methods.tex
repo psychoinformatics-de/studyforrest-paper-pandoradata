@@ -43,7 +43,69 @@ and a 50ms quarter-sine ramp was applied at the start and end of each excerpt
 to suppress transients.
 
 \subsection*{Procedures and stimulation setup}
-\cite{Aguirre_2011}
+
+The setup for audio-visual presentation was as previously reported
+\cite{Hanke_2014}. Participants listened to the audio using custom-built in-ear
+headphones that were driven by an MR confon mkII+ fed from an Aureon 7.1 USB
+(Terratec) sound card through an optical connection.
+Visual instructions were presented with an LCD projector (DLA-G150CL, JVC Ltd.)
+on a rear-projection screen positioned behind the head coil within the magnetic
+bore. Participants viewed the screen through a mirror attached to the head
+coil.
+
+At the start of each recording session, during the preparatory MR scans,
+participants listened to a series of longer excerpts of musical pieces and
+songs from the five different genres. During this phase participants were
+instructed to request adjustments of the stimulus volume in order to guarantee
+optimal perception of the stimuli against the noise pedestal emitted by the
+scanner. The was no overlap between the songs presented in this phase and those
+used as stimuli in the main experiment.
+
+Eight scanning runs followed the initial sound calibration. Each run was
+started by the participant with a key-press ready signal. Each run comprised 25
+trials, five stimuli for each of the five runs. These 25 stimuli were identical
+across runs and presented exactly once per run. The onset of each stimulus was
+synchronized with the volume acquisition trigger signal emitted by the scanner.
+Order of stimulus genres within each run was counter-balanced using De Bruijn
+cycles \cite{Aguirre_2011} (alphabet size = 5, counter-balancing level = 2),
+hence each genre was followed by any other genre equally often and exactly
+once.  For each of the eight runs a unique De Bruijn cycle was generated.
+However, the same set of 8 cycles was used for all participants in the study,
+while randomizing the order of run sequences across participants. This was done
+in order to maintain synchronous stimulation across participants for the
+application of the hyperalignment algorithm. At the end of each run
+participants were given the opportunity for break of variable length until the
+indicated readiness for the next run. Most participants started the next run
+within a minute.
+
+Each run started with a white fixation cross in the center of the screen. With
+the beginning of each trial, synchronous with the start of the stimulus, the
+fixation cross turned green to indicated music playback, and changed back to
+white after the playback had stopped.  In order to further disentangle
+responses to individual genres, each trial was followed by a variable delay of
+4, 6, or 8 seconds. For each of the five trials for any given genre, the 4 and
+8 second delay occurred once, while the remained three trial had a 6 second
+delay period. The order of delay lengths was randomized within a run's
+stimulation sequence. During trials with an 8 second delay subjects were
+presented with a yes/no question that replaced the fixation cross four seconds
+after the end of the music stimulus. The content of the question was randomized
+and asked for particular features of the stimulus that had just ended (``Was
+there a female singer?'', ``Did the song have a happy melody?'', etc.).
+Participants had to indicated their response by pressing one of two buttons
+with the index or middle finger of their right hand corresponding to the
+response alternative presented on the screen. ``Yes'' was always mapped to the
+left side (index finger), ``No'' always to the right side (middle finger).  The
+question had the purpose to keep the participants attentive to the stimuli and
+counteract the affect of increasing familiarity across multiple runs.  This
+stimulation procedure guaranteed a minimum of four second of uniform
+stimulation (no audio stimulus, no visual stimulus other than a white fixation
+cross) after each musical stimulus.
+
+Stimulus presentation and response logging were implemented using PsychoPy
+(CITE).  The source code of the complete implementation of the experiment, as
+well as the actual stimulus sequences used for each run are available as
+Supplementary Material in the data release. PsychoPy was running on a computer
+with the (Neuro)Debian operating system (CITE).
 
 \subsection*{Functional MRI data acquisition}
 
@@ -58,7 +120,8 @@ the previous study \cite{Hanke_2014}. As the exact same alignment target was
 used, this led to a very similar field-of-view configuration across
 acquisitions.
 
-Each acquisition run consisted of 153 volumes, for a total of eight runs.
+Each acquisition run consisted of 153 volumes (repetition time of 2.0 seconds
+with no inter-volume gaps), for a total of eight runs.
 
 \subsection*{Physiological recordings}
 
