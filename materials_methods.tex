@@ -24,7 +24,7 @@ Acquisition of the data described herein was part of a previously published
 study \cite{Hanke_2014}, and took place in close temporal proximity (no more
 than a few weeks apart). The participants in this data release are identical to
 those previously reported \cite{Hanke_2014}.  They were fully instructed about
-the nature of the study and were paid a total of 100 EUR for their
+the nature of the study and were paid a total of \unit[100]{EUR} for their
 participation, which included the previously reported data acquisitions, as
 well as the one described herein. All data acquisitions were jointly approved
 by the ethics committee of the Otto-von-Guericke-University of Magdeburg,
@@ -38,8 +38,8 @@ study \cite[for details refer to][]{Casey_2012}. They were five natural,
 stereo, high-quality music stimuli for each of five different musical genres:
 1) Ambient, 2) Roots Country 3) Heavy Metal, 4) 50s Rock'n'Roll, and 5)
 Symphonic.  Each stimulus was a six second excerpt from the center of each
-musical pieces.  Excerpts were normalized so that their RMS values were equal,
-and a 50ms quarter-sine ramp was applied at the start and end of each excerpt
+musical piece.  Excerpts were normalized so that their RMS values were equal,
+and a \unit[50]{ms} quarter-sine ramp was applied at the start and end of each excerpt
 to suppress transients.
 
 \subsection*{Procedures and stimulation setup}
@@ -58,7 +58,7 @@ participants listened to a series of longer excerpts of musical pieces and
 songs from the five different genres. During this phase participants were
 instructed to request adjustments of the stimulus volume in order to guarantee
 optimal perception of the stimuli against the noise pedestal emitted by the
-scanner. The was no overlap between the songs presented in this phase and those
+scanner. There was no overlap between the songs presented in this phase and those
 used as stimuli in the main experiment.
 
 Eight scanning runs followed the initial sound calibration. Each run was
@@ -74,9 +74,9 @@ However, the same set of 8 cycles was used for all participants in the study,
 while randomizing the order of run sequences across participants. This was done
 in order to maintain synchronous stimulation across participants for the
 application of the hyperalignment algorithm. At the end of each run
-participants were given the opportunity for break of variable length until the
-indicated readiness for the next run. Most participants started the next run
-within a minute.
+participants were given the opportunity for a break of variable length until
+the indicated readiness for the next run. Most participants started the next
+run within a minute.
 
 Each run started with a white fixation cross in the center of the screen. With
 the beginning of each trial, synchronous with the start of the stimulus, the
@@ -84,7 +84,7 @@ fixation cross turned green to indicated music playback, and changed back to
 white after the playback had stopped.  In order to further disentangle
 responses to individual genres, each trial was followed by a variable delay of
 4, 6, or 8 seconds. For each of the five trials for any given genre, the 4 and
-8 second delay occurred once, while the remained three trial had a 6 second
+8 second delay occurred once, while the remained three trials had a 6 second
 delay period. The order of delay lengths was randomized within a run's
 stimulation sequence. During trials with an 8 second delay subjects were
 presented with a yes/no question that replaced the fixation cross four seconds
@@ -95,17 +95,17 @@ Participants had to indicated their response by pressing one of two buttons
 with the index or middle finger of their right hand corresponding to the
 response alternative presented on the screen. ``Yes'' was always mapped to the
 left side (index finger), ``No'' always to the right side (middle finger).  The
-question had the purpose to keep the participants attentive to the stimuli and
+question had the purpose of keeping the participants attentive to the stimuli and
 counteract the affect of increasing familiarity across multiple runs.  This
-stimulation procedure guaranteed a minimum of four second of uniform
+stimulation procedure guaranteed a minimum of four seconds of uniform
 stimulation (no audio stimulus, no visual stimulus other than a white fixation
 cross) after each musical stimulus.
 
 Stimulus presentation and response logging were implemented using PsychoPy
-\cite{19198666}.  The source code of the complete implementation of the experiment, as
+\cite{Pierce_2007}.  The source code of the complete implementation of the experiment, as
 well as the actual stimulus sequences used for each run are available as
 Supplementary Material in the data release. PsychoPy was running on a computer
-with the (Neuro)Debian operating system \cite{23055966}.
+with the (Neuro)Debian operating system \cite{Halchenko_2012}.
 
 \subsection*{Functional MRI data acquisition}
 
@@ -121,10 +121,19 @@ used, this led to a very similar field-of-view configuration across
 acquisitions.
 
 Each acquisition run consisted of 153 volumes (repetition time of 2.0 seconds
-with no inter-volume gaps), for a total of eight runs.
+with no inter-volume gaps), for a total of eight runs. All functional MRI data
+was converted from the DICOM format in the NIfTI format for publication.
+Furthermore, following a de-identification procedure described elsewhere
+\cite{Hanke_2014} voxels in the vicinity of facial features, auricles, or teeth
+were zeroed out in the published images. Binary mask images indicating which
+voxels were altered are provided.
 
 \subsection*{Physiological recordings}
 
 The cardiac and respiratory trace was recorded for the full duration of all
 eight runs. The acquisition setup for physiological was identical with the one
 previously reported \cite{Hanke_2014}.
+
+\subsection*{Dataset structure}
+
+
