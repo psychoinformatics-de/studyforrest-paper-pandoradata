@@ -1,14 +1,32 @@
 SRC=p.tex
 
-all: p.pdf
-p.pdf: p.bbl
+all: pics p.pdf
+p.pdf: boilerplate.tex p.bbl
+
+fancyboilerplate: fancyboilerplate-stamp
+fancyboilerplate-stamp: boilerplate_common.tex boilerplate_fancy.tex
+	rm -f plainboilerplate-stamp
+	rm -f p.aux
+	cat boilerplate_fancy.tex boilerplate_common.tex > boilerplate.tex
+	touch $@
+
+plainboilerplate: plainboilerplate-stamp
+plainboilerplate-stamp: boilerplate_common.tex boilerplate_plain.tex
+	rm -f fancyboilerplate-stamp
+	rm -f p.aux
+	cat boilerplate_plain.tex boilerplate_common.tex > boilerplate.tex
+	touch $@
+
+p.odt: p.pdf
+	/usr/share/tex4ht/oolatex p.tex '' '' '' '-interaction=nonstopmode'
 
 pics:
 	$(MAKE) -C pics
 
 clean::
-	rm -f revision.log
+	rm -f revision.log boilerplate.tex *-stamp
 	$(MAKE) -C pics clean
+	-rm -f *.4ct *.4tc *.idv *.lg *.tmp p.odt *.xref
 
 
 #
@@ -33,11 +51,6 @@ BIBTEX = bibtex
 	env BIBINPUTS=$(BIBDIR): BSTINPUTS=$(BSTDIR): $(BIBTEX) $(BIBFLAGS) $*
 
 ## Helper if interested in providing proper version tag within the manuscript
-revision.tex: sty/revision.tex.in
-	GITID=$$(git log -1 | grep -e '^commit' -e '^Date:' | sed  -e 's/^[^ ]* *//g' | tr '\n' ' '); \
-	echo $$GITID; \
-	sed -e "s/GITID/$$GITID/g" $< >| $@
-
 ASRC=$(SRC) $(MSRC) $(SSRC)
 cleanexts=dvi aux bbl blg end ps pdf djvu log idx toc lot lof ttt tpt fff out nav snm vrb cb cb2
 clean::
@@ -47,4 +60,4 @@ clean::
 	rm -f $(CODE_TEX) code.sty $(CODE:.py=-snippet*.*)
 
 
-.PHONY: pics
+.PHONY: pics fancyboilerplate plainboilerplate

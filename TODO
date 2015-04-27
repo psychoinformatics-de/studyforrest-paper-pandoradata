@@ -1,0 +1,10 @@
+- proper model name, not 99
+- check physio data for leading NULL samples
+- check header consistency
+- check alignment
+
+== deal with me ============================
+- sub005 has run009 physio
+- sub010 has no group-space alignment done
+- sub020 abort after run4, but has behavdata for 6+
+

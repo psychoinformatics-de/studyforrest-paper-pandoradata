@@ -3,5 +3,10 @@
 *.blg
 *.log
 *.out
-*.pdf
-
+*.fff
+*.lof
+p.pdf
+boilerplate.tex
+*-stamp
+*.ttt
+*.lot
