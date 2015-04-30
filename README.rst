@@ -1,3 +1,8 @@
+Manuscript
+----------
+
+Enter directory ``paper/``.
+
 First thing is to run ``make fancyboilerplate``.
 
 Run ``make`` to compile a PDF.
