@@ -21,7 +21,9 @@ p.odt: p.pdf
 	/usr/share/tex4ht/oolatex p.tex '' '' '' '-interaction=nonstopmode'
 
 pics:
-	$(MAKE) -C pics
+	# for final
+	# $(MAKE) -C pics
+	$(MAKE) -C pics/generated
 
 clean::
 	rm -f revision.log boilerplate.tex *-stamp
