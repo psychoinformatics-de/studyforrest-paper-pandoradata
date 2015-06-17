@@ -16,7 +16,7 @@ and reproduction in any medium, provided the original work is properly cited.
 Instructions
 ------------
 
-In order to build a preprint version of the article run `make` in the
+In order to build a preprint version of the article run ``make`` in the
 root of the repository checkout. This will obtain the necessary data
 portions from public sources, build all computationally inexpensive
 statistics and figures from scratch and yield a PDF.
