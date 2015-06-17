@@ -1,0 +1,12 @@
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.fff
+*.lof
+p.pdf
+boilerplate.tex
+*-stamp
+*.ttt
+*.lot

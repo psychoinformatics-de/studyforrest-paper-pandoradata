@@ -1,0 +1,56 @@
+% we need umlauts in the refs
+\usepackage[utf8]{inputenc}
+
+%\usepackage[natbib=true,style=nature]{biblatex}
+\usepackage{authblk}
+\renewcommand\Affilfont{\itshape\small}
+\usepackage{graphicx}
+\usepackage[authoryear]{natbib}
+\usepackage{url}
+%\usepackage{endfloat}
+% nicer units
+\usepackage{units}
+% better tables
+\usepackage{booktabs}
+% Some colorings for the tables
+%\usepackage[table]{xcolor}
+\usepackage{soul}
+
+%\usepackage{multirow}
+
+% switch for final stage
+%\graphicspath{{pics/}}
+\graphicspath{{pics/}
+              {pics/generated/}}
+
+%\usepackage{lineno}
+%\usepackage[leftbars]{changebar}
+%\setlength\changebarsep{0.5em}
+%\usepackage{comment}
+
+%\usepackage[space]{grffile}
+%\usepackage{latexsym}
+%\usepackage{amssymb}
+%\usepackage{fancyref}
+\usepackage{textcomp}
+
+\usepackage{marvosym}
+\usepackage{listings}
+\lstset{prebreak=\Righttorque}
+\lstset{postbreak=\Lefttorque}
+\lstset{breakindent=0pt}
+\lstset{frame=lines}
+\lstset{aboveskip=4mm}
+\lstset{breaklines=true, breakatwhitespace=false}
+\urlstyle{same}
+% howto cite projects
+\newcommand{\purl}[2]{#1\footnote{\url{#2}}}
+
+\newcommand{\sevenT}{\unit[7]{Tesla}}
+\newcommand{\threeT}{\unit[3]{Tesla}}
+\newcommand{\mm}[1]{\unit[#1]{mm}}
+\newcommand{\seconds}[1]{\unit[#1]{s}}
+
+\newcommand{\ie}[0]{\emph{i.e.},\ }
+\newcommand{\eg}[0]{\emph{e.g.},\ }
+\newcommand{\etc}[0]{\emph{etc.}}
