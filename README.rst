@@ -1,27 +1,30 @@
-Figures
--------
+Article: 7-Tesla fMRI data on the perception of musical genres
+==============================================================
 
-To build raw version of all figures run ``make figures``. All figures are stored
-in ``paper/pics/generated`` in SVG format.
+This repository contains the sources of the publication:
 
-By default python3 is used but the use of python2 can be forced by running:
+  Michael Hanke, Richard Dinga, Christian Häusler, J. Swaroop
+  Guntupalli, Michael Casey, Falko R. Kaule & Jörg Stadler.
+  (2015). High-resolution 7-Tesla fMRI data on the perception of
+  musical genres -- an extension to the *studyforrest* dataset.
 
-  ``make figures PYTHON=python``
+This is an open access article distributed under the terms of the Creative
+Commons Attribution Licence, which permits unrestricted use, distribution,
+and reproduction in any medium, provided the original work is properly cited.
 
-or something equivalent.
 
+Instructions
+------------
 
-Manuscript
-----------
+In order to build a preprint version of the article run `make` in the
+root of the repository checkout. This will obtain the necessary data
+portions from public sources, build all computationally inexpensive
+statistics and figures from scratch and yield a PDF.
 
-Run ``make paper`` or:
+The following software is required:
 
-Enter directory ``paper/``.
-
-First thing is to run ``make fancyboilerplate``.
-
-Run ``make`` to compile a PDF.
-
-If it is necessary to generate a Word-like document, ofr whatever reason, first
-run ``make plainboilerplate``, next run ``make p.odt`` to compile an OpenOffice
-document (needs tex4ht installed).
+- git
+- git-annex
+- PyMVPA (automatically cloned via Git)
+- Inkscape
+- TeX distribution (tested with TeX-Live)
