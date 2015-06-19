@@ -1,4 +1,51 @@
-\input{boilerplate}
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{f1000_styles}
+\usepackage[colorlinks]{hyperref}
+\usepackage{appendix}
+% we need umlauts in the refs
+\usepackage[utf8]{inputenc}
+
+%\usepackage[natbib=true,style=nature]{biblatex}
+\usepackage{authblk}
+\renewcommand\Affilfont{\itshape\small}
+\usepackage{graphicx}
+\usepackage[authoryear]{natbib}
+\usepackage{url}
+% nicer units
+\usepackage{units}
+% better tables
+\usepackage{booktabs}
+% Some colorings for the tables
+\usepackage{soul}
+
+% switch for final stage
+%\graphicspath{{pics/}}
+\graphicspath{{pics/}
+              {pics/generated/}}
+
+\usepackage{textcomp}
+
+\usepackage{marvosym}
+\usepackage{listings}
+\lstset{prebreak=\Righttorque}
+\lstset{postbreak=\Lefttorque}
+\lstset{breakindent=0pt}
+\lstset{frame=lines}
+\lstset{aboveskip=4mm}
+\lstset{breaklines=true, breakatwhitespace=false}
+\urlstyle{same}
+% howto cite projects
+\newcommand{\purl}[2]{#1\footnote{\url{#2}}}
+
+\newcommand{\sevenT}{\unit[7]{Tesla}}
+\newcommand{\threeT}{\unit[3]{Tesla}}
+\newcommand{\mm}[1]{\unit[#1]{mm}}
+\newcommand{\seconds}[1]{\unit[#1]{s}}
+
+\newcommand{\ie}[0]{\emph{i.e.},\ }
+\newcommand{\eg}[0]{\emph{e.g.},\ }
+\newcommand{\etc}[0]{\emph{etc.}}
 \begin{document}
 \bibliographystyle{unsrt}
 
@@ -696,8 +743,146 @@ Facility at the Leibniz Institute for Neurobiology in Magdeburg.
 Only open-source software was employed in this study. We thank their respective
 authors for making it publicly available.
 
-\bibliography{references}
+%\bibliography{references}
+\begin{thebibliography}{10}
 
+\bibitem{HBI+14}
+Michael Hanke, Florian~J. Baumgartner, Pierre Ibe, Falko~R. Kaule, Stefan
+  Pollmann, Oliver Speck, Wolf Zinke, and Jörg Stadler.
+\newblock {A high-resolution 7-Tesla {fMRI} dataset from complex natural
+  stimulation with an audio movie}.
+\newblock {\em Scientific Data}, 1, 2014.
+
+\bibitem{LRS+2015}
+A.~Labs, T.~Reich, H.~Schulenburg, M.~Boennen, M.~Gehrke, M.and~Golz,
+  B.~Hartings, N.~Hoffmann, S.~Keil, M.~Perlow, A.~K. Peukmann, L.~N. Rabe,
+  F.-R. von Sobbe, and M.~Hanke.
+\newblock Portrayed emotions in the movie "{Forrest Gump}".
+\newblock {\em F1000Research}, 4:92, 2015.
+
+\bibitem{CTK+2012}
+Michael Casey, Jessica Thompson, Olivia Kang, Rajeev Raizada, and Thalia
+  Wheatley.
+\newblock {Population Codes Representing Musical Timbre for High-Level {fMRI}
+  Categorization of Music Genres}.
+\newblock In {\em Machine Learning and Interpretation in Neuroimaging}, pages
+  34--41. Springer Science and Business Media, 2012.
+
+\bibitem{HGC+11}
+James~V. Haxby, J.~Swaroop Guntupalli, Andrew~C. Connolly, Yaroslav~O.
+  Halchenko, Bryan~R. Conroy, M.~Ida Gobbini, Michael Hanke, and Peter~J.
+  Ramadge.
+\newblock A common, high-dimensional model of the representational space in
+  human ventral temporal cortex.
+\newblock {\em Neuron}, 72(2):404--416, 2011.
+\newblock PMC3201764.
+
+\bibitem{HH2015}
+M.~Hanke and Y.~O. Halchenko.
+\newblock A communication hub for a decentralized collaboration on studying
+  real-life cognition.
+\newblock {\em F1000Research}, 4:62, 2015.
+
+\bibitem{AMM+2011}
+Geoffrey~Karl Aguirre, Marcelo~Gomes Mattar, and Luc{\'{\i}}a Magis-Weinberg.
+\newblock {de Bruijn cycles for neural decoding}.
+\newblock {\em {NeuroImage}}, 56(3):1293--1300, 2011.
+
+\bibitem{Pie2007}
+J.W. Peirce.
+\newblock {PsychoPy}--{P}sychophysics software in {P}ython.
+\newblock {\em Journal of Neuroscience Methods}, 162(1-2):8--13, 2007.
+
+\bibitem{HH12}
+Yaroslav~O. Halchenko and Michael Hanke.
+\newblock {Open is not enough. {L}et's take the next step: {A}n integrated,
+  community-driven computing platform for neuroscience}.
+\newblock {\em Frontier in Neuroinformatics}, 6(00022), 2012.
+
+\bibitem{IS2012}
+M.H. In and O~Speck.
+\newblock Highly accelerated {PSF}-mapping for {EPI} distortion correction with
+  improved fidelity.
+\newblock {\em MAGMA}, 25:183--192, 2012.
+
+\bibitem{TAB+2014}
+Petri Toiviainen, Vinoo Alluri, Elvira Brattico, Mikkel Wallentin, and Peter
+  Vuust.
+\newblock Capturing the musical brain with lasso: Dynamic decoding of musical
+  features from fmri data.
+\newblock {\em NeuroImage}, 88:170--180, 2014.
+
+\bibitem{BWG+2013}
+Dmitry Bogdanov, Nicolas Wack, Emilia G{\'o}mez, Sankalp Gulati, Perfecto
+  Herrera, Oscar Mayor, Gerard Roma, Justin Salamon, Jos{\'e} Zapata, and
+  Xavier Serra.
+\newblock Essentia: an open-source library for sound and music analysis.
+\newblock In {\em Proceedings of the 21st ACM international conference on
+  Multimedia}, pages 855--858. ACM, 2013.
+
+\bibitem{GFK2005}
+Todor Ganchev, Nikos Fakotakis, and George Kokkinakis.
+\newblock Comparative evaluation of various mfcc implementations on the speaker
+  verification task.
+\newblock In {\em Proceedings of the SPECOM}, volume~1, pages 191--194, 2005.
+
+\bibitem{LS2001}
+Beth Logan and Ariel Salomon.
+\newblock A music similarity function based on signal analysis.
+\newblock In {\em Proc. IEEE Int. Conf. Multimedia and Expo}, page 190. IEEE,
+  2001.
+
+\bibitem{MEK2009}
+Meinard M{\"u}ller, Sebastian Ewert, and Sebastian Kreuzer.
+\newblock Making chroma features more robust to timbre changes.
+\newblock In {\em Acoustics, Speech and Signal Processing, 2009. ICASSP 2009.
+  IEEE International Conference on}, pages 1877--1880. IEEE, 2009.
+
+\bibitem{KSR+2005}
+Katrin Krumbholz, Marc Sch{\"o}nwiesner, Rudolf R{\"u}bsamen, Karl Zilles,
+  Gereon~R Fink, and D~Yves Von~Cramon.
+\newblock Hierarchical processing of sound location and motion in the human
+  brainstem and planum temporale.
+\newblock {\em European Journal of Neuroscience}, 21(1):230--238, 2005.
+
+\bibitem{SJW+2004}
+SM~Smith, M~Jenkinson, MW~Woolrich, CF~Beckmann, TE~Behrens, H~Johansen-Berg,
+  PR~Bannister, Luca~M De, I~Drobnjak, DE~Flitney, RK~Niazy, J~Saunders,
+  J~Vickers, Y~Zhang, Stefano~N De, JM~Brady, and PM~Matthews.
+\newblock {Advances in functional and structural MR image analysis and
+  implementation as FSL.}
+\newblock {\em NeuroImage}, 23 Suppl 1:S208--19, 2004.
+
+\bibitem{GVR+2015}
+Krzysztof~Jacek Gorgolewski, Gael Varoquaux, Gabriel Rivera, Yannick Schwartz,
+  Satrajit~S Ghosh, Camille Maumet, Vanessa~V Sochat, Thomas~E. Nichols,
+  Russell~A. Poldrack, Jean-Baptiste Poline, Tal Yarkoni, and Daniel~S.
+  Margulies.
+\newblock {NeuroVault.org}: A web-based repository for collecting and sharing
+  unthresholded statistical maps of the human brain.
+\newblock {\em Frontiers in Neuroinformatics}, 9(8), 2015.
+
+\bibitem{SCT2013}
+Johannes Stelzer, Yi~Chen, and Robert Turner.
+\newblock Statistical inference and multiple testing correction in
+  classification-based multi-voxel pattern analysis (mvpa): random permutations
+  and cluster size control.
+\newblock {\em NeuroImage}, 65:69--82, 2013.
+
+\bibitem{HHS09b}
+M~Hanke, YO~Halchenko, PB~Sederberg, E~Olivetti, I~Fründ, JW~Rieger,
+  CS~Herrmann, JV~Haxby, SJ~Hanson, and S~Pollmann.
+\newblock {PyMVPA: A Unifying Approach to the Analysis of Neuroscientific
+  Data.}
+\newblock {\em Frontier in Neuroinformatics}, 3:3, 2009.
+
+\bibitem{YPN+2011}
+T.~Yarkoni, R.~A. Poldrack, T.~E. Nichols, D.~C. Van~Essen, and T.~D. Wager.
+\newblock Large-scale automated synthesis of human functional neuroimaging
+  data.
+\newblock {\em Nature Methods}, 8:665--670, 2011.
+
+\end{thebibliography}
 \end{document}
 
 % vim: textwidth=80 colorcolumn=81
