@@ -1,6 +1,9 @@
 Article: 7-Tesla fMRI data on the perception of musical genres
 ==============================================================
 
+.. image:: https://zenodo.org/badge/doi/10.5281/zenodo.18767.svg
+   :target: http://dx.doi.org/10.5281/zenodo.18767
+
 This repository contains the sources of the publication:
 
   Michael Hanke, Richard Dinga, Christian Häusler, J. Swaroop
