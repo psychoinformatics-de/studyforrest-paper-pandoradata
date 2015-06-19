@@ -76,10 +76,17 @@ The present data release enables comparative studies of the representation of
 musical genres (spectrum, timbre, vocal content) with ultra high-field, high
 resolution fMRI data from a larger sample of participants. In conjuction with
 the previous data releases, it will also further expand the continuum of
-research question that can be approached with the joint dataset. For example, the
-development of encoding models for cortical representations of music in complex
-auditory stimuli (the audio-movie contains several dozen musical excerpts from
-a broad range of genres).  These data can also serve as a public resource for
+research question that can be approached with the joint dataset. For example,
+the development of encoding models for cortical representations of music in
+complex auditory stimuli (the audio-movie contains several dozen musical
+excerpts from a broad range of genres). To this end, we include audio feature
+extractions that represent the time-frequency information of each stimulus in
+four different views. The views are mapped to different perceptually-motivated
+scales (mel and decibel scales) and via a decorrelating linear transformation
+(DCT-II). It is hoped that providing these example features will catalyze
+discoveries of auditory stimulus codes in neural populations.
+
+Lastly, these data can also serve as a public resource for
 benchmarking algorithms for functional alignment \cite[e.g., ][]{HGC+11}, or
 other analyses, and thus, further the availability of resources for the
 investigation of real-life cognition \cite{HH2015}.
@@ -101,10 +108,11 @@ Germany.
 \subsection*{Stimulus}
 
 All stimuli employed in this study are identical to those used in a previous
-study \cite[for details refer to][]{CTK+2012}. They were five natural,
-stereo, high-quality music stimuli for each of five different musical genres:
-1) Ambient, 2) Roots Country 3) Heavy Metal, 4) 50s Rock'n'Roll, and 5)
-Symphonic (see Figure \ref{fig:spectrograms} for details).
+study \cite[for details refer to][]{CTK+2012}. They were five natural, stereo,
+high-quality music stimuli (\unit[6]{s} duration; \unit[44.1]{kHz} sampling
+rate) for each of five different musical genres: 1) Ambient, 2) Roots Country
+3) Heavy Metal, 4) 50s Rock'n'Roll, and 5) Symphonic (see Figure
+\ref{fig:spectrograms} for details).
 
 
 \begin{figure*}
@@ -248,10 +256,10 @@ important properties.
     \midrule
     \multicolumn{2}{l}{\texttt{stimulus/task002/}} & \textbf{Stimulus file and paradigm implementation}\\
     & \texttt{[intro,runs].csv} & Helper CSV tables for PsychoPy experiment \\
-    & \texttt{make\_design.py} & Script for random stimulation sequence generation \\
-    & \texttt{mg\_7T.psyexp} & PsychoPy (v1.82) builder experiment implementation \\
+    & \texttt{mg\_7T.psyexpi, make\_design.py} & PsychoPy (v1.82) experiment, sequence generation script \\
     & \texttt{stimuli/[ambient,country,metal,rocknroll,symphonic]\_00[0-4].wav} \\
     & & Stimulus files (PCM WAVE, \unit[16]{bit}, \unit[44100]{Hz} stereo)\\
+    & \texttt{make\_audiofeature.py, features/*} & Extracted audio features and script \\
 
     \midrule
     \multicolumn{3}{l}{\texttt{SUBJECT/behav/task002\_run00[1-8]/behavdata.txt}} \\
@@ -373,16 +381,14 @@ automated conversion procedure is provided in the same directory
 Recent experiments have shown that audio features can be predicted via
 regression models from fMRI signals to test stimulus coding hypotheses
 \cite{CTK+2012,TAB+2014}.  To facilitate this activity with the current data we
-extracted four audio features from the music genre stimuli. The stimulus sample
-rate was \unit[44.1]{kHz}, stereo, with duration 6s. Audio was down-mixed to
-mono and feature extraction used a front-end windowed short-time Fourier
-transform, with window size 16384 samples (\unit[371.52]{ms}) and hop size 4410
-samples (\unit[100]{ms}) yielding 63 overlapping feature vectors per stimulus
-file.  Window parameters were chosen to trade temporal for spectral acuity,
-yielding frequency samples spaced linearly at \unit[2.69]{Hz} intervals from
-\unit[0-22.05]{kHz}. The four features extracted from this representation are
-described below and are illustrated in the audiofeatures.py reference
-implementation included with task002.
+extracted four audio features from down-mixed mono stimuli. Feature extraction
+used a front-end windowed short-time Fourier transform, with window size 16384
+samples (\unit[371.52]{ms}) and hop size 4410 samples (\unit[100]{ms}) yielding
+63 overlapping feature vectors per stimulus file.  Window parameters were
+chosen to trade temporal for spectral acuity, yielding frequency samples spaced
+linearly at \unit[2.69]{Hz} intervals from \unit[0-22.05]{kHz}. The four
+features extracted from this representation are described below.
+
 
 \paragraph{Mel-Frequency Spectrum (mfs) -- 48 dimensions}
 %
@@ -409,10 +415,10 @@ feature robust to timbral changes \cite{MEK2009}. We extracted the full set of
 48 cepstral coefficients from the mel-frequency spectrum, by mapping the mel
 spectrum to a decibel amplitude scale and multiplying by the discrete cosine
 transform (DCT-II) matrix. It is expected that any application would first
-remove the constant first column and retain either the +subsequent 13-20
+remove the constant first column and retain either the subsequent 13-20
 coefficients or the remaining upper coefficients after those, depending on
 whether sensitivity or robustness to timbral difference is required. The
-remaining +two features yield such a separation into low and high quefrency
+remaining two features yield such a separation into low and high quefrency
 spectral components.
 
 \paragraph{Low-Quefrency and High-Quefrency Mel-Frequency Spectrum (lq\_mfs,
@@ -429,12 +435,6 @@ decibel amplitude scale. These two sets of features represent broad-spectrum
 information (timbre) and fine-scale spectral structure (pitch) respectively.
 The product of these two spectra yields the mel-frequency spectrum.
 
-Taken together, these audio features represent the time-frequency information
-of each stimulus in four different views. The views are mapped to different
-perceptually-motivated scales (mel and decibel scales) and via a decorrelating
-linear transformation (DCT-II). It is hoped that providing these example
-features will catalyze discoveries of auditory stimulus codes in neural
-populations.
 
 \subsection*{Source code}
 
@@ -443,9 +443,10 @@ figures~\ref{fig:spectrograms}~and~\ref{fig:motionqc}, as well as the
 implementation for the analysis presented in figure \ref{fig:blobs} is
 available in a Git repository at
 \url{https://github.com/psychoinformatics-de/paper-f1000_pandora_data}.  Source
-code for the implementation of the stimulation paradigm are included in the
-data release.  Additional scripts for data conversion and quality control are
-available at: \url{https://github.com/hanke/gumpdata}.
+code for the implementation of the stimulation paradigm and audio feature
+extraction are included in the data release.  Additional scripts for data
+conversion and quality control are available at:
+\url{https://github.com/hanke/gumpdata}.
 
 \section*{Dataset validation}
 %Use section and subsection commands to organize your document. \LaTeX{}
